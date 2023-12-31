@@ -8,7 +8,9 @@ from sorter import quicksort
 #Modify if needed
 DELAY_TIME = 0.1
 BASE_COLOR = ['#5b92c9']
-COLORS_BASE = BASE_COLOR * 100
+COLORS_BASE = BASE_COLOR * 50
+SORT_ALGORITHM_LIST = ['Quick', 'Insertion']
+
 
 # Function to plot the list
 def plot_values(values, title='Visualizing sorting algorithms', colors=None):
@@ -27,6 +29,7 @@ def plot_values(values, title='Visualizing sorting algorithms', colors=None):
 
     c = colors if colors is not None else COLORS_BASE
     if len(values) != len(c):
+        print(len(values), len(c))
         raise ValueError("Length of 'values' and 'colors' must be the same.")
     ax.clear()
     ax.bar(range(len(values)), values, color=c)

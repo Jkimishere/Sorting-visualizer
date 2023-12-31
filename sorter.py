@@ -41,7 +41,6 @@ def quicksort(arr, start, end, plot_func, fignum):
         return
     if start < end: 
         pivot = quicksort_partition(arr, start, end, plot_func, fignum)
-        #time.sleep(0.03)
         try:
             quicksort(arr, start, pivot - 1, plot_func, fignum)
             quicksort(arr, pivot + 1, end, plot_func, fignum)
@@ -59,5 +58,3 @@ def test_quicksort(length_arr):
 
     sorted_arr = quicksort(test_arr, 0, len(test_arr)-1)
     print(sorted_arr == sorted(test_arr))
-
-    
