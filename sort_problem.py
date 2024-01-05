@@ -43,7 +43,7 @@ def find_minimum(arr, start, end, a):
     """
     # This is added for edge cases where the subarray length is 1. (The subarray only contains the target value)
     if len(arr[start:end + 1]) == 1:
-        return arr[0]
+        return arr[start:end + 1][0]
     if start < end:
         # Find the pivot
         pivot = quicksort_partition(arr, start, end)
@@ -72,17 +72,16 @@ def find_minimum_maximum(arr, a):
         - a (int): The target index
     """
     # We have to find the maximum too, so create the a_max variable (The index for the ath maximum value)
-    a_max = len(arr) -a
-
+    a_max = len(arr) -a -1
     # Find the minimum and maximum values
-    minimum = find_minimum(arr, 0, len(arr)-1, a-1)
+    minimum = find_minimum(arr, 0, len(arr)-1, a)
     maximum = find_minimum(arr, 0, len(arr)-1, a_max)
     return minimum, maximum
 
 
 # Example usage:
-# array = [9, 3, 8, 4, 7, 6, 1, 5, 2, 10]
-# a = 3
-# minimum, maximum = find_minimum_maximum(array, a)
-# print(f"Minimum: {minimum}, Maximum: {maximum}")
-# expected output : Minimum: 3, Maximum: 8
+#array = [3, 8, 4, 7, 6, 1, 5, 2]
+#a_value = 1
+#minimum, maximum = find_minimum_maximum(array, a_value)
+#print(f"Minimum: {minimum}, Maximum: {maximum}")
+# expected output : Minimum: 1, Maximum: 7
