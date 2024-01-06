@@ -1,3 +1,5 @@
+import random
+
 
 def quicksort_partition(arr, start, end):
     """
@@ -47,8 +49,6 @@ def find_minimum(arr, start, end, a):
     if start < end:
         # Find the pivot
         pivot = quicksort_partition(arr, start, end)
-        if len(arr) == 1:
-            return arr[0]
         # Check if the pivot is equal to index 'a'
         if pivot == a:
                 # We return the minimum value
@@ -63,7 +63,7 @@ def find_minimum(arr, start, end, a):
 
         
 
-def find_minimum_maximum(arr, a):
+def find_minimum_maximum(num_elements, a):
     """
     Using the find_minimum function, get both the ath minimum and maximum values.
 
@@ -71,6 +71,8 @@ def find_minimum_maximum(arr, a):
         - arr (list): The array to find the ath minimum and maximum value in.
         - a (int): The target index
     """
+    arr = list(range(num_elements))
+    random.shuffle(arr)
     # We have to find the maximum too, so create the a_max variable (The index for the ath maximum value)
     a_max = len(arr) -a -1
     # Find the minimum and maximum values
@@ -80,8 +82,8 @@ def find_minimum_maximum(arr, a):
 
 
 # Example usage:
-#array = [3, 8, 4, 7, 6, 1, 5, 2]
-#a_value = 1
-#minimum, maximum = find_minimum_maximum(array, a_value)
-#print(f"Minimum: {minimum}, Maximum: {maximum}")
+# num_elements = 8
+# a_value = 1
+# minimum, maximum = find_minimum_maximum(num_elements, a_value)
+# print(f"Minimum: {minimum}, Maximum: {maximum}")
 # expected output : Minimum: 1, Maximum: 7
