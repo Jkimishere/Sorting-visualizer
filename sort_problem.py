@@ -13,6 +13,9 @@ def quicksort_partition(arr, start, end):
 
     Returns:
         Index of pivot element : int
+
+    Time complexity : O(n)
+    Space complexity : O(1)
     """
     #choose the pivot for partitioning. (the last element)
     pivot = arr[end]
@@ -68,7 +71,7 @@ def find_minimum_maximum(num_elements, a):
     Using the find_minimum function, get both the ath minimum and maximum values.
 
     Parameters:
-        - arr (list): The array to find the ath minimum and maximum value in.
+        - num_elements (int): The number of elements in the array to find the ath minimum and maximum value in.
         - a (int): The target index
     """
     arr = list(range(num_elements))
@@ -82,8 +85,8 @@ def find_minimum_maximum(num_elements, a):
 
 
 # Example usage:
-# num_elements = 8
-# a_value = 1
-# minimum, maximum = find_minimum_maximum(num_elements, a_value)
-# print(f"Minimum: {minimum}, Maximum: {maximum}")
-# expected output : Minimum: 1, Maximum: 7
+num_elements = 8
+a_value = 1
+minimum, maximum = find_minimum_maximum(num_elements, a_value)
+print(f"Minimum: {minimum}, Maximum: {maximum}")
+# expected output : Minimum: 1, Maximum: 6
